@@ -318,14 +318,15 @@ p{margin:0 0 1em}
 }
 @media (min-width:561px) and (max-width:1080px){
   /* portrait sits BESIDE the name, not above it */
-  .hero__grid{grid-template-columns:1fr 1.05fr;gap:12px;align-items:start}
-  .hero__right{order:0;transform:none}
-  .hero__char{max-height:min(42vh,340px)}
+  .hero__grid{grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+  .hero__right{order:0;transform:none;position:relative;min-height:540px}
+  .hero__figure{position:absolute;top:0;right:-40px;width:min(60vw,348px);max-width:none}
+  .hero__char{width:100%;height:auto;max-width:none;max-height:none}
   .hero__logo-line{font-size:clamp(2.6rem,9.2vw,5rem)}
   .hero__logo-line--outline{-webkit-text-stroke-width:1.4px}
   .hero__headline{font-size:clamp(1.15rem,3.2vw,1.7rem)}
   .hero__sub{font-size:.94rem}
-  .pcard{right:-10px;bottom:6px;max-width:265px}
+  .pcard{right:-10px;bottom:6px;max-width:265px;z-index:3}
 }
 @media (max-width:860px){
   .nav__menu{
