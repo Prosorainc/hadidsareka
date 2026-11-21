@@ -149,16 +149,12 @@ p{margin:0 0 1em}
 }
 
 .hero__right{position:relative;display:flex;justify-content:center;align-items:center;min-height:0;transform:translateX(-11%)}
-.hero__figure{margin:0;position:relative;width:100%;display:flex;justify-content:center;perspective:1200px;transform-style:preserve-3d}
+.hero__figure{margin:0;position:relative;width:100%;display:flex;justify-content:center}
 .hero__char{
   width:auto;max-width:100%;
   max-height:clamp(370px,68vh,660px);
-  filter:drop-shadow(0 34px 70px rgba(0,0,0,.45));
-  -webkit-mask-image:linear-gradient(to bottom,#000 78%,rgba(0,0,0,.35) 93%,transparent 100%);
-  mask-image:linear-gradient(to bottom,#000 78%,rgba(0,0,0,.35) 93%,transparent 100%);
   transform-origin:50% 90%;
   transform-style:preserve-3d;
-  will-change:transform;
 }
 /* character motion is driven by one unified RAF loop in main.js */
 
@@ -319,6 +315,17 @@ p{margin:0 0 1em}
   .hero__scroll{display:none}
   .pcard{right:0;bottom:8px;max-width:270px}
   .about{grid-template-columns:1fr}
+}
+@media (min-width:561px) and (max-width:1080px){
+  /* portrait sits BESIDE the name, not above it */
+  .hero__grid{grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+  .hero__right{order:0;transform:none}
+  .hero__char{max-height:min(40vh,320px)}
+  .hero__logo-line{font-size:clamp(2.6rem,9.2vw,5rem)}
+  .hero__logo-line--outline{-webkit-text-stroke-width:1.4px}
+  .hero__headline{font-size:clamp(1.15rem,3.2vw,1.7rem)}
+  .hero__sub{font-size:.94rem}
+  .pcard{right:-8px;bottom:4px;max-width:250px}
 }
 @media (max-width:860px){
   .nav__menu{
